@@ -60,7 +60,7 @@ def hello():
 def lab_temp():
 	import sys
 	import Adafruit_DHT
-	humidity, temperature = Adafruit_DHT.read_retry(Adafruit_DHT.AM2302, 17)
+	humidity, temperature = Adafruit_DHT.read_retry(11, 4)
 	temperature = temperature * 9/5.0 + 32
 	if humidity is not None and temperature is not None:
 		return render_template("lab_temp.html",temp=temperature,hum=humidity)
